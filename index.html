@@ -1,21 +1,48 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Brian's Library</title>
+    <meta name="author" content="" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<head>
-  <meta charset="utf-8">
-  <title></title>
-  <meta name="author" content="">
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="reset.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+  </head>
 
-  <link href="style.css" rel="stylesheet">
-</head>
+  <body>
+    <header>
+      <h1>Your Library</h1>
+      <button id="book-btn">Add Book +</button>
+    </header>
+    <main>
+      <div id="book-modal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h1>New Book</h1>
+          <form class="modal-form">
+            <label for="name">Name:</label>
+            <br>
+            <input type="text" name="name" id="name">
+            <br>
+            <label for="author">Author:</label>
+            <br>
+            <input type="text" name="author" id="author">
+            <br>
+            <label for="page-count"># of Pages:</label>
+            <br>
+            <input type="text" name="page-count" id="page-input">
+            <br>
+            <label for="checkbox">Finished?</label>
+            <input type="checkbox" name="checkbox" id="finished-check">
+            <br>
+            <input type="submit" id="modal-submit" value="Add to Library!">
+          </form>
+        </div>
+      </div>
+    </main>
 
-<body>
-
-  <p>Hello, world!</p>
-
-  <script src="library.js"></script>
-</body>
-
+    <script src="library.js"></script>
+  </body>
 </html>
