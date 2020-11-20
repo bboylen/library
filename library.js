@@ -5,15 +5,6 @@ function Book(title, author, pages, read) {
   this.author = author;
   this.pages = pages;
   this.read = read;
-  this.info = function () {
-    let readString;
-    if (read) {
-      readString = "not read";
-    } else {
-      readString = "already read";
-    }
-    console.log(`${title} by ${author}, ${pages} pages, ${readString}`);
-  };
 }
 
 function addBookToLibrary(book) {
@@ -25,10 +16,6 @@ const theIdiot = new Book("The Idiot", "Dostoevsky", 500, true);
 
 addBookToLibrary(theHobbit);
 addBookToLibrary(theIdiot);
-
-for (let book of myLibrary) {
-  book.info();
-}
 
 // Add Book Modal
 
@@ -49,3 +36,33 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
+// Form creates book entry
+// if modal open -> listen to add button -> if validates -> read info from form
+document.getElementById('book-form').addEventListener('submit', handleForm);
+
+function handleForm(ev) {
+  ev.preventDefault();
+  let myForm = ev.target;
+  let fd = new FormData(myForm);
+
+  // for (let key of fd.keys()) {
+  //   console.log(key, fd.get(key));
+  // }
+
+  // create book object 
+
+  // create div 
+  let bookDiv = document.createElement('div');
+  bookDiv.classList.add('book');
+  let libraryDiv = document.getElementsByClassName('library');
+  libraryDiv[0].append(bookDiv);
+  let name = document.createElement('p');
+  name.innerHTML = fd.get('name');
+  let author = document.createElement('p');
+  let pageCount = document.createElement('p');
+  let completion = document.createElement('p');
+  console.log(name);
+  bookDiv.append(name);
+}
+
