@@ -38,31 +38,48 @@ window.onclick = function(event) {
 }
 
 // Form creates book entry
-// if modal open -> listen to add button -> if validates -> read info from form
-document.getElementById('book-form').addEventListener('submit', handleForm);
 
-function handleForm(ev) {
+document.getElementById('book-form').addEventListener('submit', createBook);
+
+function createBook(ev) {
   ev.preventDefault();
   let myForm = ev.target;
   let fd = new FormData(myForm);
 
-  // for (let key of fd.keys()) {
-  //   console.log(key, fd.get(key));
-  // }
-
   // create book object 
+  let newBook = new Book(fd.get('title'),fd.get('author'),fd.get('page-count'), fd.get('finished-check'));
+  myLibrary.push(newBook);
+  console.log(newBook);
 
-  // create div 
+  // create book display 
   let bookDiv = document.createElement('div');
   bookDiv.classList.add('book');
   let libraryDiv = document.getElementsByClassName('library');
   libraryDiv[0].append(bookDiv);
-  let name = document.createElement('p');
-  name.innerHTML = fd.get('name');
+
+  let title = document.createElement('p');
+  title.innerHTML = newBook.title;
+  title.classList.add('book-title');
+  bookDiv.append(title);
+
   let author = document.createElement('p');
+  author.innerHTML = newBook.author;
+  author.classList.add('book-author');
+  bookDiv.append(author);
+
   let pageCount = document.createElement('p');
-  let completion = document.createElement('p');
-  console.log(name);
-  bookDiv.append(name);
+  pageCount.innerHTML = newBook.pages + " pages";
+  pageCount.classList.add('book-pages');
+  bookDiv.append(pageCount);
+
+  let completionStatus = document.createElement('p');
+  if (newBook.read) {
+    completionStatus.innerHTML = "Read!"
+  } else {
+    completionStatus.innerHTML = "Not read"
+  }
+  completionStatus.classList.add('book-read');
+  bookDiv.append(completionStatus);
 }
 
+// make form clear, limit inputs, text wrap

@@ -125,5 +125,29 @@ header h1 {
   margin: 30px auto;
   border: 3px solid black;
   border-radius: 15px;
-  background-color: #dedede;
+  text-align: center;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  background-color: #996600;
+  color: white;
 }
+
+.book .book-title {
+  margin-top: 25px;
+  font-size: 32px;
+}
+
+.book .book-author {
+  margin-top: 25px;
+  font-size: 28px;
+}
+
+.book .book-pages {
+  margin-top: 25px;
+  font-size: 24px;
+}
+
+.book .book-read {
+  margin-top: 25px;
+  font-size: 24px;
+}
+
