@@ -108,7 +108,7 @@ header h1 {
   background-color: #418c82;
 }
 
-/* library */ 
+/* library / book */ 
 
 .library {
   width: 90%;
@@ -129,6 +129,40 @@ header h1 {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   background-color: #996600;
   color: white;
+}
+
+.book #destroy-book-btn-container {
+  text-align: right;
+}
+
+.book #destroy-book-button {
+ 
+}
+
+.close-book {
+  position: absolute;
+  right: 32px;
+  top: 32px;
+  width: 32px;
+  height: 32px; 
+  opacity: 0.3;
+}
+.close-book:hover {
+  opacity: 1;
+}
+.close-book:before, .close-book:after {
+  position: relative;
+  left: 15px;
+  content: ' ';
+  height: 33px;
+  width: 2px;
+  background-color: #333;
+}
+.close-book:before {
+  transform: rotate(45deg);
+}
+.close-book:after {
+  transform: rotate(-45deg);
 }
 
 .book .book-title {
@@ -158,4 +192,6 @@ header h1 {
 .book .read {
   background-color: green;
 }
+
+
 

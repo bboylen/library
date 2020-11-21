@@ -49,6 +49,13 @@ function createBook(ev) {
   let libraryDiv = document.getElementsByClassName('library');
   libraryDiv[0].append(bookDiv);
 
+  // let btnContainer = document.createElement('div');
+  // btnContainer.id = "destroy-book-btn-container";
+  // bookDiv.append(btnContainer);
+  let destroyBookBtn = document.createElement('a');
+  destroyBookBtn.classList.add('close-book')
+  bookDiv.append(destroyBookBtn);
+
   let title = document.createElement('p');
   title.innerHTML = newBook.title;
   title.classList.add('book-title');
