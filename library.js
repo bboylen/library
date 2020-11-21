@@ -1,3 +1,4 @@
+// Create library and Book object
 let myLibrary = [];
 
 function Book(title, author, pages, read) {
@@ -11,28 +12,19 @@ function addBookToLibrary(book) {
   myLibrary.push(book);
 }
 
-const theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", 295, true);
-const theIdiot = new Book("The Idiot", "Dostoevsky", 500, true);
-
-addBookToLibrary(theHobbit);
-addBookToLibrary(theIdiot);
-
 // Add Book Modal
 
 let modal = document.getElementById("book-modal");
 let btn = document.getElementById("book-btn");
 let span = document.getElementsByClassName("close")[0];
+let submit = document.getElementById("modal-submit");
 
 btn.onclick = function() {
   modal.style.display = "block";
 }
 
-span.onclick = function () {
-  modal.style.display = "none";
-}
-
 window.onclick = function(event) {
-  if (event.target == modal) {
+  if (event.target == modal || event.target == submit || event.target == span) {
     modal.style.display = "none";
   }
 }
@@ -72,14 +64,27 @@ function createBook(ev) {
   pageCount.classList.add('book-pages');
   bookDiv.append(pageCount);
 
-  let completionStatus = document.createElement('p');
+  let completionStatus = document.createElement('button');
   if (newBook.read) {
     completionStatus.innerHTML = "Read!"
+    completionStatus.classList.add('read');
   } else {
     completionStatus.innerHTML = "Not read"
   }
-  completionStatus.classList.add('book-read');
+  completionStatus.classList.add('read-check');
   bookDiv.append(completionStatus);
+  completionStatus.onclick = toggleRead;
 }
 
-// make form clear, limit inputs, text wrap
+function toggleRead(ev) {
+  console.log(ev);
+  let button = ev.target;
+  if (button.classList.contains('read')) {
+    button.classList.remove('read');
+    button.innerHTML = "Not read"
+  } else {
+    button.classList.add('read');
+    button.innerHTML = "Read!";
+  }
+}
+// make form clear, limit inputs, text wrap, book truth value
