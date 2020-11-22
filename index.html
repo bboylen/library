@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Brian's Library</title>
+    <meta name="author" content="" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link href="reset.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Your Library</h1>
+      <button id="book-btn">Add Book +</button>
+    </header>
+    <main>
+      <div id="book-modal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h1>New Book</h1>
+          <form id="book-form" class="modal-form">
+            <label for="title">Title:</label>
+            <br>
+            <input type="text" name="title">
+            <br>
+            <label for="author">Author:</label>
+            <br>
+            <input type="text" name="author">
+            <br>
+            <label for="page-count"># of Pages:</label>
+            <br>
+            <input type="number" name="page-count">
+            <br>
+            <label for="checkbox">Finished?</label>
+            <input type="checkbox" name="finished-check">
+            <br>
+            <input type="submit" id="modal-submit" value="Add to Library!">
+          </form>
+        </div>
+      </div>
+      <div class="library">
+      </div>
+    </main>
+
+    <script src="library.js"></script>
+  </body>
+</html>
