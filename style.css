@@ -129,14 +129,7 @@ header h1 {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   background-color: #996600;
   color: white;
-}
-
-.book #destroy-book-btn-container {
-  text-align: right;
-}
-
-.book #destroy-book-button {
- 
+  overflow: hidden;
 }
 
 .close-book {
@@ -170,16 +163,29 @@ header h1 {
 
 .book .book-title {
   margin-top: -5px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  max-height: 17%;
+  overflow: hidden;
   font-size: 32px;
 }
 
 .book .book-author {
   margin-top: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  overflow: hidden;
   font-size: 28px;
 }
 
 .book .book-pages {
-  margin-top: 120px;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  overflow: hidden;
   font-size: 24px;
 }
 

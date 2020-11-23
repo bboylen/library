@@ -55,6 +55,7 @@ function createBook(ev) {
   let destroyBookBtn = document.createElement('a');
   destroyBookBtn.classList.add('close-book')
   bookDiv.append(destroyBookBtn);
+  destroyBookBtn.onclick = destroyBook;
 
   let title = document.createElement('p');
   title.innerHTML = newBook.title;
@@ -94,4 +95,11 @@ function toggleRead(ev) {
     button.innerHTML = "Read!";
   }
 }
+
+function destroyBook(ev) {
+  let book = ev.target.parentNode;
+  console.log(book);
+  book.parentNode.removeChild(book);
+}
+
 // make form clear, limit inputs, text wrap, book truth value
